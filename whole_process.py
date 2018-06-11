@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from clip_image import clipping_image
 
 def whole_process(imagename):
-	image_in = clipping_image(imagename) # return txt. file of paths of cropped images
+	image_in = clipping_image(imagename) # return path of txt. file which contains the paths of cropped images
 
 
 
