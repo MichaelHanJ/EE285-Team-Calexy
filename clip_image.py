@@ -50,9 +50,10 @@ def clipping_image(imagename):
               #saveflocation: location to store clipped images
               #imagename
        #output: clipped faces stored in the destination
-        f = open("cropped_images/cropped_image_path.txt", "w")
-        im = Image.open(imagelocation)
         pathdir = os.getcwd()
+        txt_cropped_image_path = pathdir + "/cropped_images/cropped_image_path.txt" # path of the saved paths of cropped images
+        f = open(txt_cropped_image_path, "w")
+        im = Image.open(imagelocation)
         for idx, loc in enumerate(loc_result):
             region = im.crop(loc)
             #region = region.resize((224, 224)) # resize the cropped image to 224x224
@@ -60,6 +61,7 @@ def clipping_image(imagename):
             f.writelines(savepath + "\n")
             region.save(savepath)
         f.close()   
+        return txt_cropped_image_path
         # quality and be changed or removed
      
     
@@ -75,7 +77,7 @@ def clipping_image(imagename):
     imagename = imagename
     #print imagename
     loc_result = dataseparation(txtlocation)
-    clipimage(imagelocation, saveloction, loc_result, imagename)
+    return clipimage(imagelocation, saveloction, loc_result, imagename)
     
 
 if __name__ == "__main__":
