@@ -80,8 +80,8 @@ face: 100%
 Image Path saved in cropped_images/image_path.txt
 Enter Image Path: 
 ```
-This network prints out the objects detected, the confidence, cooridinates for box and how long it took to find them. The detected result with bounding box is saved to predictions.png in the EE285-Team-Calexy folder. The cooresponding coordinates of the bounding box are stored in the `location.txt` file in the `locations` folder.
-If you want to perform age/race/gender classification, you need to exit the test process. You can press `Control + C` to exit.
+This network prints out the objects detected, the confidence, cooridinates for box and how long it took to find them. The detected result with bounding box is saved to `predictions.png` file. You can check it out in the `EE285-Team-Calexy` folder. The cooresponding coordinates of the bounding box are stored in the `location.txt` file in the `locations` folder.
+If you want to perform age/race/gender classification, you need to exit the test process for face detection. You can press `Control + C` to exit.
 
 ## Age/race/gender Classification
 
