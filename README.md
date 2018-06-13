@@ -1,6 +1,7 @@
 # EE285-Team-Calexy
 A cunstomized combination of age/race/gender classifier based on VGG16 and human face detector based on YOLOv3.
 
+<img src="result_example/predictions_4.png" alt="facedetection_result" height="250px" width="250px">
 ## Installing The Base darknet
 First clone our git repository here. This can be completed by:
 ```
