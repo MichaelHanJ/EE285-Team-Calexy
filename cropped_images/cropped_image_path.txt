@@ -1,1 +1,1 @@
-/datasets/home/83/383/zhh045/ece285/project/darknet/cropped_images/test_9.JPEG_cropped_0.JPEG
+/Users/huangzhisheng/Desktop/CSE_291/foodp/BBox-Label-Tool-master/EE285-Team-Calexy/cropped_images/test_3.JPEG_cropped_0.JPEG

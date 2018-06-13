@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 #from_future_import division
 #import scipy as sp
 
-def clipping_image(imagename):
+def clip_image(imagename):
     
     def dataseparation(txtlocation):
     
@@ -83,4 +83,4 @@ def clipping_image(imagename):
 if __name__ == "__main__":
     #function = getattr(sys.modules[__name__], sys.argv[1])
     imagename = sys.argv[2]
-    clipping_image(imagename)
+    clip_image(imagename)
