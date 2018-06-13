@@ -80,6 +80,15 @@ face: 100%
 Image Path saved in cropped_images/image_path.txt
 Enter Image Path: 
 ```
-This network prints out the objects detected, the confidence, cooridinates for box and how long it took to find them. The detected result with bounding box is saved to predictions.png in the EE285-Team-Calexy folder.
-If you want to exit the test process, you can press `Control + C` to exit.
+This network prints out the objects detected, the confidence, cooridinates for box and how long it took to find them. The detected result with bounding box is saved to predictions.png in the EE285-Team-Calexy folder. The cooresponding coordinates of the bounding box are stored in the `location.txt` file in the `locations` folder.
+If you want to perform age/race/gender classification, you need to exit the test process. You can press `Control + C` to exit.
 
+## Age/race/gender Classification
+
+## Detailed Explanations 
+### clip_image.py 
+`clip_image.py` is used to clip the detected facial area obtained by face detection and saves all the cropped images in the `cropped_images` folder. The corresponding paths of all cropped images are stored in the `cropped_image_path.txt`, which are provided for age/race/gender classification. If you want to only run this program, you can write in the command lines as follows:
+```
+python clip_image.py clip_image test_1.JPEG
+```
+###
