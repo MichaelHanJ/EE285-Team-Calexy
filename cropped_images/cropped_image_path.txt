@@ -1,0 +1,1 @@
+/datasets/home/83/383/zhh045/ece285/project/darknet/cropped_images/test_9.JPEG_cropped_0.JPEG

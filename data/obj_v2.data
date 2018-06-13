@@ -1,0 +1,5 @@
+classes= 1
+train  = data/training_list.txt
+valid  = data/validation_list.txt
+names = data/obj_v2.names
+backup = weights_yolov2/
