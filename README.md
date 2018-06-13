@@ -89,6 +89,6 @@ If you want to perform age/race/gender classification, you need to exit the test
 ### clip_image.py 
 `clip_image.py` is used to clip the detected facial area obtained by face detection and saves all the cropped images in the `cropped_images` folder. The corresponding paths of all cropped images are stored in the `cropped_image_path.txt`, which are provided for age/race/gender classification. If you want to only run this program, you can write in the command lines as follows:
 ```
-python clip_image.py clip_image test_1.JPEG
+python clip_image.py test_1.JPEG
 ```
 ###
