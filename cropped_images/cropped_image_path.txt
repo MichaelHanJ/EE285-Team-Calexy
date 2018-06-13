@@ -1,1 +1,1 @@
-/Users/huangzhisheng/Desktop/CSE_291/foodp/BBox-Label-Tool-master/EE285-Team-Calexy/cropped_images/test_3.JPEG_cropped_0.JPEG
+/Users/huangzhisheng/Desktop/CSE_291/foodp/BBox-Label-Tool-master/EE285-Team-Calexy/cropped_images/test_1.JPEG_cropped_0.JPEG
