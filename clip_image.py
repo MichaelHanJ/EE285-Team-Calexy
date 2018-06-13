@@ -82,5 +82,5 @@ def clipping_image(imagename):
 
 if __name__ == "__main__":
     #function = getattr(sys.modules[__name__], sys.argv[1])
-    imagename = sys.argv[2]
+    imagename = sys.argv[1]
     clipping_image(imagename)
