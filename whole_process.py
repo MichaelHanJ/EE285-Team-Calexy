@@ -16,5 +16,5 @@ def whole_process(imagename):
 
 
 if __name__ == "__main__":
-	imagename = sys.argv[2] ## using python clip_image.py clip_image test_2.JPEG 
+	imagename = sys.argv[1] ## using python clip_image.py clip_image test_2.JPEG 
 	whole_process(imagename)
