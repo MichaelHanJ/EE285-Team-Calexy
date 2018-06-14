@@ -13,9 +13,8 @@ import os
 import torch.nn as nn
 from torch.autograd import Variable
 import torch
-import time
-from sklearn.svm import SVR
-from collections import defaultdict
+# from sklearn.svm import SVR
+# from collections import defaultdict
 
 
 # In[2]:
