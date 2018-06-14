@@ -87,7 +87,7 @@ This network prints out the objects detected, the confidence, cooridinates for b
 
 <img src="result_example/predictions_1.png" alt="facedetection_result" height="300px" width="200px">
 
-The cooresponding coordinates of the bounding box are stored in the `location.txt` file in the `locations` folder.
+The cooresponding coordinates of the bounding box are stored in the `location.txt` file in the `locations` folder. The cropped images based on the coordinates are saved in `cropped_images` folder.
 If you want to perform age/race/gender classification, you need to exit the test process for face detection. You can press `Control + C` to exit.
 
 ## Age/race/gender Classification
