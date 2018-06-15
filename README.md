@@ -56,7 +56,7 @@ gdrive_download 1wDD2I4vNO7U5FDoXKz9JM8P8xf498kwz yolo-obj.weights
 Please make sure the weight file is stored in the EE285-Team-Calexy folder.
 Then run the detector!
 ```
-./darknet detector test testexample/test_2.JPEG cfg/yolo-obj.cfg yolo-obj.weights
+./darknet detector test testexample/test_1.JPEG cfg/yolo-obj.cfg yolo-obj.weights
 ```
 You will see some outputs like this:
 ```
@@ -73,7 +73,7 @@ Enter Image Path:
 ```
 You need to enter image path again:
 ```
-Enter Image Path: testexample/test_2.JPEG
+Enter Image Path: testexample/test_1.JPEG
 ```
 You will get some outputs like:
 ```
@@ -119,6 +119,6 @@ The code will start classification and display the results.
 ### clip_image.py 
 `clip_image.py` is used to clip the detected facial area obtained by face detection and saves all the cropped images in the `cropped_images` folder. The corresponding paths of all cropped images are stored in the `cropped_image_path.txt`, which are provided for age/race/gender classification. If you want to only run this program, you can write in the command lines as follows:
 ```
-python clip_image.py test_2.JPEG
+python clip_image.py test_1.JPEG
 ```
 ###
