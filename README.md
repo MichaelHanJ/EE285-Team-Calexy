@@ -101,10 +101,13 @@ gdrive_download 1WvqWCPKXuTl44RYZ63U06zYSVEtQlPC4 classifier_age_balance.pt
 ```
 Then, you need to open `whole_process.ipynb` and run each cell one by one. For the last cell, you need to change the name of the test image as follows:
 ```
-whole_process("test_2.JPEG") # type in the name of image
+whole_process("test_1.JPEG") # type in the name of image
 ```
 You will see the output:
-<img src="result_example/predicted_image.png" alt="ageclassification_result" height="300px" width="200px">
+
+<img src="result_example/predicted_image_1.png" alt="ageclassification_result" height="300px" width="200px">
+
+If you cannot plot the images after several attempts, you may need to open a new file and paste all codes to that file and run again.
 
 ## Detailed Explanations
 ### Independent test
