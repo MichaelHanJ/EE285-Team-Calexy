@@ -92,6 +92,29 @@ If you want to perform age/race/gender classification, you need to exit the test
 
 ## Age/race/gender Classification
 
+### Independent test
+
+The code used for classification is 'classification.ipynb' (which generates a .py file named 'classifier.py')
+
+Download the retrained classifiers from google drive. Save them to the same directory with 'classification.ipynb'. The link is 
+```
+https://drive.google.com/open?id=1Xyiy4zUyp5nzIP3Co3DVE2ul9R-x2wY9
+```
+
+Download the folder with test samples named 'yolo_output3'. Save it to the same directory with 'classification.ipynb'.
+Note: 'yolo_output3' should be a folder of image files (i.e. jpg, png, ...)
+
+Open 'classification.ipynb' and run the last block shown below
+```
+if __name__ == "__main__":
+    classify('yolo_output3')
+```
+
+The code will start classification and display the results.
+
+### Test with whole_process.py
+
+
 ## Detailed Explanations 
 ### clip_image.py 
 `clip_image.py` is used to clip the detected facial area obtained by face detection and saves all the cropped images in the `cropped_images` folder. The corresponding paths of all cropped images are stored in the `cropped_image_path.txt`, which are provided for age/race/gender classification. If you want to only run this program, you can write in the command lines as follows:
