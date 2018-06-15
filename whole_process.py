@@ -6,6 +6,8 @@ import sys
 import re
 import numpy as np
 import pandas as pd
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt 
 from clip_image import clipping_image
 import classifier
@@ -16,7 +18,7 @@ def whole_process(imagename):
 	# read path
 	with open(image_in,'r') as f:
 		im_path = f.read()
-	
+        #print im_path
 	classifier.classify(im_path) # print all the predictions for each image under im_path
 
 

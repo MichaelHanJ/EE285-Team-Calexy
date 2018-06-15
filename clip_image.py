@@ -53,14 +53,20 @@ def clipping_image(imagename):
         pathdir = os.getcwd()
         txt_cropped_image_path = pathdir + "/cropped_images/cropped_image_path.txt" # path of the saved paths of cropped images
         f = open(txt_cropped_image_path, "w")
+        finalsavepath = pathdir + "/" + savelocation + "/" + "face_images"
+        f.writelines(finalsavepath)
+        f.close()
+        files = glob.glob(finalsavepath + "/*")
+        for d in files:
+            os.remove(d) # remove all old images
         im = Image.open(imagelocation)
         for idx, loc in enumerate(loc_result):
             region = im.crop(loc)
             #region = region.resize((224, 224)) # resize the cropped image to 224x224
-            savepath = pathdir + "/" + savelocation + "/" + imagename[:] + "_cropped_" + str(idx) + ".JPEG"
-            f.writelines(savepath + "\n")
+            savepath = finalsavepath + "/" + imagename[:-5] + "_cropped_" + str(idx) + ".JPEG"
+            #f.writelines(savepath + "\n")
             region.save(savepath)
-        f.close()   
+        #f.close()   
         return txt_cropped_image_path
         # quality and be changed or removed
      
