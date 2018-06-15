@@ -8,6 +8,8 @@ from torchvision import models,transforms,datasets
 import torch
 from PIL import Image
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import os
 import torch.nn as nn
@@ -109,6 +111,7 @@ def classify(path):
         f,ax = plt.subplots()
         ax.imshow(test_case[i])
         ax.set_title(result_gender[i] + ' ' + result_race[i] + ' ' + str(result_age[i]))
+        plt.show()
     
 
 
