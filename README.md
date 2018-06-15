@@ -94,7 +94,7 @@ The cooresponding coordinates of the bounding box are stored in the `location.tx
 If you want to perform age/race/gender classification, you need to exit the test process for face detection. You can press `Control + C` to exit.
 
 ### Age/race/gender Classification
-#### Test with whole_process.py
+#### Classifying with whole_process.ipynb
 First, you need to download classifiers from Google Drive. The link is [here](https://drive.google.com/open?id=1Xyiy4zUyp5nzIP3Co3DVE2ul9R-x2wY9). Or you can run the following codes to download the classifiers:
 ```
 gdrive_download 1q60trqT_4eR0KcC66mNPfACyPdoJ2fCo classifier_race.pt
@@ -138,9 +138,10 @@ if __name__ == "__main__":
 The code will start classification and display the results.
  
 ### clip_image.py 
-`clip_image.py` is used to clip the detected facial area obtained by face detection and saves all the cropped images in the `cropped_images` folder. The corresponding paths of all cropped images are stored in the `cropped_image_path.txt`, which are provided for age/race/gender classification. If you want to only run this program, you can write in the command lines as follows:
+`clip_image.py` is used to clip the detected facial area obtained by face detection and saves all the cropped images in the `cropped_images/face_images` folder. The corresponding path of this folder is stored in the `cropped_image_path.txt`, which are provided for age/race/gender classification. If you want to only run this program, you can write in the command lines as follows:
 ```
 python clip_image.py test_1.JPEG
 ```
 ### whole_process.ipynb
-`whole_process`
+`whole_process.ipynb` is used to perform the entire detection and classification process, which is discussed in the `Classifying with whole_process.ipynb` section.
+
