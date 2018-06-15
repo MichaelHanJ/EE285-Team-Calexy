@@ -47,16 +47,17 @@ usage: ./darknet <function>
 ```
 Now, you are ready to play with this custimoized YOLOv3 network for human face detection.
 ### Detection Using A Pre-Trained Model
-We have trained YOLOv3 and YOLOv3 models. You will have to download the pre-trained weight file [here](https://drive.google.com/file/d/1wDD2I4vNO7U5FDoXKz9JM8P8xf498kwz/view?usp=sharing) for YOLOv3 model. Or just run the following codes to get the pre-trained weights saved in Google Drive.
+We have trained YOLOv3 and YOLOv3 models. You will have to download the pre-trained weight file [here](https://drive.google.com/file/d/1wDD2I4vNO7U5FDoXKz9JM8P8xf498kwz/view?usp=sharing) for YOLOv3 model. Or just run the following codes to get the pre-trained weights saved in Google Drive. `gdrive_download()` is a function to download file from Google Drive.
 ```
 function gdrive_download () {
   CONFIRM=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate "https://docs.google.com/uc?export=download&id=$1" -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')
   wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$CONFIRM&id=$1" -O $2
   rm -rf /tmp/cookies.txt
 }
+
 gdrive_download 1wDD2I4vNO7U5FDoXKz9JM8P8xf498kwz yolo-obj.weights
 ```
-Please make sure the weight file is stored in the EE285-Team-Calexy folder.
+Please make sure the weight file is stored in the EE285-Team-Calexy folder. All the testing images are saved in `testexample` folder.
 Then run the detector!
 ```
 ./darknet detector test testexample/test_1.JPEG cfg/yolo-obj.cfg yolo-obj.weights
@@ -91,7 +92,7 @@ This network prints out the objects detected, the confidence, cooridinates for b
 <img src="result_example/predictions_1.png" alt="facedetection_result" height="300px" width="200px">
 
 The cooresponding coordinates of the bounding box are stored in the `location.txt` file in the `locations` folder. The cropped images based on the coordinates are saved in `cropped_images` folder.
-If you want to perform age/race/gender classification, you need to exit the test process for face detection. You can press `Control + C` to exit.
+If you want to perform age/race/gender classification, you need to exit the test process for face detection. You can press `Control + C` to exit. Then, you can perform the age/race/gender classification.
 
 ### Age/race/gender Classification
 #### Classifying with whole_process.ipynb
