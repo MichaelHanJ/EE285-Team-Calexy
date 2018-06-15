@@ -3,7 +3,7 @@ A cunstomized combination of age/race/gender classifier based on VGG16 and human
 
 <img src="result_example/predictions_4.png" alt="facedetection_result" height="300px" width="500px">
 
-<img src="result_example/title_2.png" alt="title_result" height="150px" width="150px"><img src="result_example/title_3.png" alt="title_result" height="150px" width="150px"><img src="result_example/title_1.png" alt="title_result" height="150px" width="150px"><img src="result_example/vgg_badexample_2.png" alt="title_result" height="150px" width="150px">
+<img src="result_example/title_2.png" alt="title_result" height="150px" width="150px"><img src="result_example/title_3.png" alt="title_result" height="150px" width="150px"><img src="result_example/vgg_badexample_2.png" alt="title_result" height="150px" width="150px"><img src="result_example/title_1.png" alt="title_result" height="150px" width="150px">
 
 ## Installing The Base darknet
 
