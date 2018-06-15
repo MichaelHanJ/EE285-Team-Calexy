@@ -56,7 +56,7 @@ gdrive_download 1wDD2I4vNO7U5FDoXKz9JM8P8xf498kwz yolo-obj.weights
 Please make sure the weight file is stored in the EE285-Team-Calexy folder.
 Then run the detector!
 ```
-./darknet detector test testexample/test_1.JPEG cfg/yolo-obj.cfg yolo-obj.weights
+./darknet detector test testexample/test_2.JPEG cfg/yolo-obj.cfg yolo-obj.weights
 ```
 You will see some outputs like this:
 ```
