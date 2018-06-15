@@ -100,7 +100,7 @@ First, you need to download classifiers from Google Drive. The link is [here](ht
 ```
 gdrive_download 1q60trqT_4eR0KcC66mNPfACyPdoJ2fCo classifier_race.pt
 gdrive_download 10oYM5kqQ3dCoLPb5Pp8omTG6HJA9o_x6 classifier_gender.pt
-gdrive_download 1WvqWCPKXuTl44RYZ63U06zYSVEtQlPC4 classifier_age_balance.pt
+gdrive_download 1UzkHDHV66N5Gi7IeXjAHkFEnCrKcQ4HT classifier_age_balance_optimal.pt
 
 ```
 Then, you need to open `whole_process.ipynb` and run each cell one by one. For the last cell, you need to change the name of the test image as follows:
