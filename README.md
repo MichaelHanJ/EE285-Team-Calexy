@@ -91,7 +91,7 @@ This network prints out the objects detected, the confidence, cooridinates for b
 
 <img src="result_example/predictions_1.png" alt="facedetection_result" height="300px" width="200px">
 
-The cooresponding coordinates of the bounding box are stored in the `location.txt` file in the `locations` folder. The cropped images based on the coordinates are saved in `cropped_images` folder.
+The cooresponding coordinates of the bounding box are stored in the `location.txt` file in the `locations` folder. The cropped images based on the coordinates are saved in `cropped_images/face_images` folder.
 If you want to perform age/race/gender classification, you need to exit the test process for face detection. You can press `Control + C` to exit. Then, you can perform the age/race/gender classification.
 
 ### Age/race/gender Classification
@@ -99,11 +99,13 @@ If you want to perform age/race/gender classification, you need to exit the test
 First, you need to download classifiers from Google Drive. The link is [here](https://drive.google.com/open?id=1Xyiy4zUyp5nzIP3Co3DVE2ul9R-x2wY9). Or you can run the following codes to download the classifiers:
 ```
 gdrive_download 1q60trqT_4eR0KcC66mNPfACyPdoJ2fCo classifier_race.pt
+
 gdrive_download 10oYM5kqQ3dCoLPb5Pp8omTG6HJA9o_x6 classifier_gender.pt
+
 gdrive_download 1UzkHDHV66N5Gi7IeXjAHkFEnCrKcQ4HT classifier_age_balance_optimal.pt
 
 ```
-Then, you need to open `whole_process.ipynb` and run each cell one by one. For the last cell, you need to change the name of the test image as follows:
+Then, you need to open `whole_process.ipynb` on Jupyter Notebook and run each cell one by one. For the last cell, you need to change the name of the test image as follows:
 ```
 whole_process("test_1.JPEG") # type in the name of image
 ```
