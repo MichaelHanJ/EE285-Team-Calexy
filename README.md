@@ -113,7 +113,26 @@ if __name__ == "__main__":
 The code will start classification and display the results.
 
 ### Test with whole_process.py
+In 'whole_process.ipynb', you need to add the classification part as follow.
+First, load 'classifier.py'
+```
+import classifier
+```
+Then, add few lines to fucntion 'whole_process()'
+```
+def whole_process(imagename):
+	image_in = clipping_image(imagename) # return path of txt. file which contains the paths of cropped images
+	
+	# read path
+	with open(image_in,'r') as f:
+		im_path = f.read()
+	
+	classifier.classify(im_path) # print all the predictions for each image under im_path
+```
+Where 'im_path' is a target folder containing test images (i.e. all files in 'im_path' must be image files). 
+#### ATTENTION: 'im_path' folder better includes all the testing samples. Because it takes time in 'classifier.py' to load retrained models and you better feed multiple images to a single use of classifier. 
 
+Finally, run 'whole_process.py'. The code will print out the results.  
 
 ## Detailed Explanations 
 ### clip_image.py 
