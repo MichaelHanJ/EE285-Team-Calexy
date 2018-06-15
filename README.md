@@ -5,7 +5,8 @@ A cunstomized combination of age/race/gender classifier based on VGG16 and human
 
 <img src="result_example/title_2.png" alt="title_result" height="150px" width="150px"><img src="result_example/title_3.png" alt="title_result" height="150px" width="150px"><img src="result_example/vgg_badexample_2.png" alt="title_result" height="150px" width="150px"><img src="result_example/title_1.png" alt="title_result" height="150px" width="150px">
 
-## Installing The Base darknet
+## Testing precedure
+### Installing The Base darknet
 
 First clone our git repository here. This can be completed by:
 ```
@@ -45,7 +46,7 @@ You should get the output:
 usage: ./darknet <function>
 ```
 Now, you are ready to play with this custimoized YOLOv3 network for human face detection.
-## Detection Using A Pre-Trained Model
+### Detection Using A Pre-Trained Model
 We have trained YOLOv3 and YOLOv3 models. You will have to download the pre-trained weight file [here](https://drive.google.com/file/d/1wDD2I4vNO7U5FDoXKz9JM8P8xf498kwz/view?usp=sharing) for YOLOv3 model. Or just run the following codes to get the pre-trained weights saved in Google Drive.
 ```
 function gdrive_download () {
@@ -92,8 +93,8 @@ This network prints out the objects detected, the confidence, cooridinates for b
 The cooresponding coordinates of the bounding box are stored in the `location.txt` file in the `locations` folder. The cropped images based on the coordinates are saved in `cropped_images` folder.
 If you want to perform age/race/gender classification, you need to exit the test process for face detection. You can press `Control + C` to exit.
 
-## Age/race/gender Classification
-### Test with whole_process.py
+### Age/race/gender Classification
+#### Test with whole_process.py
 First, you need to download classifiers from Google Drive. The link is [here](https://drive.google.com/open?id=1Xyiy4zUyp5nzIP3Co3DVE2ul9R-x2wY9). Or you can run the following codes to download the classifiers:
 ```
 gdrive_download 1q60trqT_4eR0KcC66mNPfACyPdoJ2fCo classifier_race.pt
@@ -112,7 +113,8 @@ You will see the output:
 If you cannot plot the images after several attempts, you may need to open a new file and paste all codes to that file and run again.
 
 ## Detailed Explanations
-### Independent test
+We will explain the function of each program in our project.
+### Independent test for classification.ipynb
 
 The code used for classification is 'classification.ipynb' (which generates a .py file named 'classifier.py')
 
@@ -140,4 +142,5 @@ The code will start classification and display the results.
 ```
 python clip_image.py test_1.JPEG
 ```
-###
+### whole_process.ipynb
+`whole_process`
