@@ -43,7 +43,7 @@ def loadmodel():
 # In[7]:
 
 
-def classify(path):
+def classify(path, model_vgg, model_age, model_gender, model_race):
     # Load images
     test_case = [Image.open(os.path.join(path,i)).convert('RGB') for i in os.listdir(path) ]
     
@@ -61,8 +61,8 @@ def classify(path):
     test_case_tensor = [prep2(d).unsqueeze_(0) for d in test_case]
     input_concat = reduce(lambda x,y:torch.cat((x,y),0),test_case_tensor)
     
-    # Load tuned classifiers
-    model_vgg, model_age, model_gender, model_race = loadmodel()
+#     Load tuned classifiers
+#     model_vgg, model_age, model_gender, model_race = loadmodel()
     
     # checking for GPU
     if torch.cuda.is_available():
@@ -122,5 +122,6 @@ def classify(path):
 
 
 if __name__ == "__main__":
-    classify('yolo_output3')
+    model_vgg, model_age, model_gender, model_race = loadmodel()
+    classify('yolo_output3',model_vgg, model_age, model_gender, model_race)
 
