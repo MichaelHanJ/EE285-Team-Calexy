@@ -8,8 +8,6 @@ from torchvision import models,transforms,datasets
 import torch
 from PIL import Image
 import numpy as np
-import matplotlib
-matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import os
 import torch.nn as nn
@@ -32,6 +30,15 @@ def test_perf(model,input_concat,feat_model):
    
     return pred.cpu().numpy()
 
+# load model
+def loadmodel():
+    model_vgg = models.vgg16(pretrained=True)
+    model_age = torch.load('classifier_age_balance.pt')
+    model_gender = torch.load('classifier_gender.pt')
+    model_race = torch.load('classifier_race.pt')
+    
+    return model_vgg, model_age, model_gender, model_race
+    
 
 # In[7]:
 
@@ -55,10 +62,7 @@ def classify(path):
     input_concat = reduce(lambda x,y:torch.cat((x,y),0),test_case_tensor)
     
     # Load tuned classifiers
-    model_vgg = models.vgg16(pretrained=True)
-    model_age = torch.load('classifier_age_balance.pt')
-    model_gender = torch.load('classifier_gender.pt')
-    model_race = torch.load('classifier_race.pt')
+    model_vgg, model_age, model_gender, model_race = loadmodel()
     
     # checking for GPU
     if torch.cuda.is_available():
@@ -111,7 +115,6 @@ def classify(path):
         f,ax = plt.subplots()
         ax.imshow(test_case[i])
         ax.set_title(result_gender[i] + ' ' + result_race[i] + ' ' + str(result_age[i]))
-        plt.show()
     
 
 
