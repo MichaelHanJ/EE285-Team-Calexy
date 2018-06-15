@@ -114,7 +114,7 @@ You will see the output:
 If you cannot plot the images after several attempts, you may need to open a new file and paste all codes to that file and run again.
 
 ## Detailed Explanations
-We will explain the function of each program in our project.
+We will explain each program we used in our project.
 ### Independent test for classification.ipynb
 
 The code used for classification is 'classification.ipynb' (which generates a .py file named 'classifier.py')
