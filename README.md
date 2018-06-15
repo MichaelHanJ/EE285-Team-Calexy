@@ -44,7 +44,7 @@ usage: ./darknet <function>
 ```
 Now, you are ready to play with this custimoized YOLOv3 network for human face detection.
 ## Detection Using A Pre-Trained Model
-We have trained YOLOv3 and YOLOv3 models. You will have to download the pre-trained weight file [here](https://drive.google.com/file/d/1wDD2I4vNO7U5FDoXKz9JM8P8xf498kwz/view?usp=sharing) for YOLOv3 model. Or just run this to get the pre-trained weights saved in Google Drive.
+We have trained YOLOv3 and YOLOv3 models. You will have to download the pre-trained weight file [here](https://drive.google.com/file/d/1wDD2I4vNO7U5FDoXKz9JM8P8xf498kwz/view?usp=sharing) for YOLOv3 model. Or just run the following codes to get the pre-trained weights saved in Google Drive.
 ```
 function gdrive_download () {
   CONFIRM=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate "https://docs.google.com/uc?export=download&id=$1" -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')
@@ -91,15 +91,33 @@ The cooresponding coordinates of the bounding box are stored in the `location.tx
 If you want to perform age/race/gender classification, you need to exit the test process for face detection. You can press `Control + C` to exit.
 
 ## Age/race/gender Classification
+### Test with whole_process.py
+First, you need to download classifiers from Google Drive. The link is [here](https://drive.google.com/open?id=1Xyiy4zUyp5nzIP3Co3DVE2ul9R-x2wY9). Or you can run the following codes to download the classifiers:
+```
+gdrive_download 1q60trqT_4eR0KcC66mNPfACyPdoJ2fCo classifier_race.pt
+gdrive_download 10oYM5kqQ3dCoLPb5Pp8omTG6HJA9o_x6 classifier_gender.pt
+gdrive_download 1WvqWCPKXuTl44RYZ63U06zYSVEtQlPC4 classifier_age_balance.pt
 
+```
+Then, you need to open `whole_process.ipynb` and run each cell one by one. For the last cell, you need to change the name of the test image as follows:
+```
+whole_process("test_2.JPEG") # type in the name of image
+```
+You will see the output:
+<img src="result_example/predicted_image.png" alt="ageclassification_result" height="300px" width="200px">
+
+## Detailed Explanations
 ### Independent test
 
 The code used for classification is 'classification.ipynb' (which generates a .py file named 'classifier.py')
 
-Download the retrained classifiers from google drive. Save them to the same directory with 'classification.ipynb'. The link is 
+Download the retrained classifiers from google drive. Save them to the same directory with 'classification.ipynb'. The link is [here](https://drive.google.com/open?id=1Xyiy4zUyp5nzIP3Co3DVE2ul9R-x2wY9). Or you can run the following codes to download the classifiers:
 ```
-https://drive.google.com/open?id=1Xyiy4zUyp5nzIP3Co3DVE2ul9R-x2wY9
+gdrive_download 1q60trqT_4eR0KcC66mNPfACyPdoJ2fCo classifier_race.pt
+gdrive_download 10oYM5kqQ3dCoLPb5Pp8omTG6HJA9o_x6 classifier_gender.pt
+gdrive_download 1WvqWCPKXuTl44RYZ63U06zYSVEtQlPC4 classifier_age_balance.pt
 ```
+
 
 Download the folder with test samples named 'yolo_output3'. Save it to the same directory with 'classification.ipynb'.
 Note: 'yolo_output3' should be a folder of image files (i.e. jpg, png, ...)
@@ -111,11 +129,7 @@ if __name__ == "__main__":
 ```
 
 The code will start classification and display the results.
-
-### Test with whole_process.py
-
-
-## Detailed Explanations 
+ 
 ### clip_image.py 
 `clip_image.py` is used to clip the detected facial area obtained by face detection and saves all the cropped images in the `cropped_images` folder. The corresponding paths of all cropped images are stored in the `cropped_image_path.txt`, which are provided for age/race/gender classification. If you want to only run this program, you can write in the command lines as follows:
 ```
