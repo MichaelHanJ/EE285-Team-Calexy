@@ -33,7 +33,8 @@ def test_perf(model,input_concat,feat_model):
 # load model
 def loadmodel():
     model_vgg = models.vgg16(pretrained=True)
-    model_age = torch.load('classifier_age_balance.pt')
+#     model_age = torch.load('classifier_age_balance.pt')
+    model_age = torch.load('classifier_age_balance_optimal.pt')
     model_gender = torch.load('classifier_gender.pt')
     model_race = torch.load('classifier_race.pt')
     
@@ -74,30 +75,43 @@ def classify(path, model_vgg, model_age, model_gender, model_race):
     # Hashtable for labels
     gender_dict = {0:'Male',1:'Female'}
     race_dict = {0:'White',1:'Black',2:'Asian',3:'Indian',4:'Others'}
-    age_dict =  {0: '1~1',
-                 1: '2~4',
-                 2: '5~10',
-                 3: '11~16',
-                 4: '17~21',
-                 5: '22~24',
-                 6: '25~26',
-                 7: '27~28',
-                 8: '29~30',
-                 9: '31~32',
-                 10: '33~35',
-                 11: '36~38',
-                 12: '39~42',
-                 13: '43~47',
-                 14: '48~52',
-                 15: '53~56',
-                 16: '57~62',
-                 17: '63~68',
-                 18: '69~74',
-                 19: '75~80',
-                 20: '81~86',
-                 21: '87~92',
-                 22: '93~101',
-                 23: '103~116'}
+#     age_dict =  {0: '1~1',
+#                  1: '2~4',
+#                  2: '5~10',
+#                  3: '11~16',
+#                  4: '17~21',
+#                  5: '22~24',
+#                  6: '25~26',
+#                  7: '27~28',
+#                  8: '29~30',
+#                  9: '31~32',
+#                  10: '33~35',
+#                  11: '36~38',
+#                  12: '39~42',
+#                  13: '43~47',
+#                  14: '48~52',
+#                  15: '53~56',
+#                  16: '57~62',
+#                  17: '63~68',
+#                  18: '69~74',
+#                  19: '75~80',
+#                  20: '81~86',
+#                  21: '87~92',
+#                  22: '93~101',
+#                  23: '103~116'}
+    
+    age_dict = {0: '1~6',
+                1: '7~11',
+                2: '12~19',
+                3: '20~24',
+                4: '25~31',
+                5: '32~41',
+                6: '42~51',
+                7: '52~61',
+                8: '62~71',
+                9: '72~81',
+                10: '82~91',
+                11: '92~116'}
     
     
     # Start classification
